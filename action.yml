@@ -46,8 +46,8 @@ inputs:
     description: Only prettify files changed in the last commit, can't be used with file_pattern!
     required: false
     default: false
-  prettier_plugins:
-    description: Install Prettier plugins, i.e. `@prettier/plugin-php @prettier/plugin-other`
+  additional_dependencies:
+    description: Install additional dependencies (such as Prettier plugins), i.e. `@prettier/plugin-php @prettier/plugin-other`
     required: false
     default: ""
   github_token:
@@ -77,7 +77,7 @@ runs:
         INPUT_DRY: ${{ inputs.dry }}
         INPUT_PRETTIER_VERSION: ${{ inputs.prettier_version }}
         INPUT_ONLY_CHANGED: ${{ inputs.only_changed }}
-        INPUT_PRETTIER_PLUGINS: ${{ inputs.prettier_plugins }}
+        INPUT_ADDITIONAL_DEPENDENCIES: ${{ inputs.additional_dependencies }}
         INPUT_WORKING_DIRECTORY: ${{ inputs.working_directory }}
         INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
         INPUT_CLEAN_NODE_FOLDER: ${{ inputs.clean_node_folder }}
