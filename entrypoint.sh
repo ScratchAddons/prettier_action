@@ -47,16 +47,16 @@ esac
 
 case $INPUT_PRETTIER_VERSION in
     false)
-        npm install prettier
+        npm install --global prettier
         ;;
     *)
-        npm install prettier@$INPUT_PRETTIER_VERSION
+        npm install --global prettier@$INPUT_PRETTIER_VERSION
         ;;
 esac
 
 # Install additional dependencies
 if [ -n "$INPUT_ADDITIONAL_DEPENDENCIES" ]; then
-    npm install --silent --global $INPUT_ADDITIONAL_DEPENDENCIES
+    npm install --global $INPUT_ADDITIONAL_DEPENDENCIES
 fi
 )
 
